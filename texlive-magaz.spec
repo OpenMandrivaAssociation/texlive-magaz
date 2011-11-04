@@ -1,3 +1,9 @@
+# revision 17431
+# category Package
+# catalog-ctan /macros/latex/contrib/magaz
+# catalog-date 2010-03-17 12:20:59 +0100
+# catalog-license lppl
+# catalog-version 0.2
 Name:		texlive-magaz
 Version:	0.2
 Release:	1
@@ -39,6 +45,7 @@ tools which remain in preparation.
 %{_texmfdistdir}/tex/latex/magaz/magaz.sty
 %doc %{_texmfdistdir}/doc/latex/magaz/magaz.pdf
 %doc %{_texmfdistdir}/doc/latex/magaz/magaz.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -49,3 +56,5 @@ tools which remain in preparation.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
