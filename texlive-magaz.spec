@@ -1,24 +1,22 @@
-# revision 17431
+# revision 24694
 # category Package
 # catalog-ctan /macros/latex/contrib/magaz
-# catalog-date 2010-03-17 12:20:59 +0100
-# catalog-license lppl
-# catalog-version 0.2
+# catalog-date 2011-11-29 11:02:24 +0100
+# catalog-license other-free
+# catalog-version 0.4
 Name:		texlive-magaz
-Version:	0.2
+Version:	0.4
 Release:	1
 Summary:	Magazine layout
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/magaz
-License:	LPPL
+License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/magaz.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/magaz.doc.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 The current version does special formatting for the first line
@@ -26,19 +24,19 @@ of text in a paragraph. The package is part of a larger body of
 tools which remain in preparation.
 
 %pre
-    %_texmf_mktexlsr_pre
+    %{_sbindir}/texlive.post
 
 %post
-    %_texmf_mktexlsr_post
+    %{_sbindir}/texlive.post
 
 %preun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
+	%{_sbindir}/texlive.post
     fi
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
