@@ -23,16 +23,8 @@ The current version does special formatting for the first line
 of text in a paragraph. The package is part of a larger body of
 tools which remain in preparation.
 
-%pre
-    %{_sbindir}/texlive.post
-
 %post
     %{_sbindir}/texlive.post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-    fi
 
 %postun
     if [ $1 -eq 0 ]; then
@@ -44,7 +36,6 @@ tools which remain in preparation.
 %{_texmfdistdir}/tex/latex/magaz/magaz.sty
 %doc %{_texmfdistdir}/doc/latex/magaz/magaz.pdf
 %doc %{_texmfdistdir}/doc/latex/magaz/magaz.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -55,5 +46,3 @@ tools which remain in preparation.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
