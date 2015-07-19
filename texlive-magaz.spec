@@ -6,7 +6,7 @@
 # catalog-version 0.4
 Name:		texlive-magaz
 Version:	0.4
-Release:	9
+Release:	10
 Summary:	Magazine layout
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/magaz
