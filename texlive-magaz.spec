@@ -1,6 +1,6 @@
 Name:		texlive-magaz
 Version:	24694
-Release:	1
+Release:	2
 Summary:	Magazine layout
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/magaz
