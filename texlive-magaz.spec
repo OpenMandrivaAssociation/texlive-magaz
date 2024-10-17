@@ -3,7 +3,7 @@ Version:	24694
 Release:	2
 Summary:	Magazine layout
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/magaz
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/magaz
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/magaz.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/magaz.doc.r%{version}.tar.xz
