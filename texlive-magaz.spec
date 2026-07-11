@@ -1,42 +1,22 @@
-Name:		texlive-magaz
-Version:	24694
-Release:	2
+%global tl_name magaz
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.4
+Release:	%{tl_revision}.1
 Summary:	Magazine layout
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/magaz
-License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/magaz.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/magaz.doc.r%{version}.tar.xz
+License:	other-free
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/magaz.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/magaz.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The current version does special formatting for the first line
-of text in a paragraph. The package is part of a larger body of
-tools which remain in preparation.
+The current version does special formatting for the first line of text
+in a paragraph. The package is part of a larger body of tools which
+remain in preparation.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/magaz/magaz.sty
-%doc %{_texmfdistdir}/doc/latex/magaz/magaz.pdf
-%doc %{_texmfdistdir}/doc/latex/magaz/magaz.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
